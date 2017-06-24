@@ -112,6 +112,7 @@ End,we could test.
 You could see your code had push the github!
 
 Reference materials
-
-
+http://www.cnblogs.com/xuange306/articles/6800794.html
+http://www.cnblogs.com/xuange306/p/6403907.html
+http://www.cnblogs.com/wangmingshun/p/5424767.html
 
