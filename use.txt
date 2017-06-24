@@ -160,8 +160,8 @@ Yum
 
 yum groupinstall "Development Tools"
 
-http://blog.csdn.net/lcj200813138020/article/details/46914161  	//change the yum base
-https://mirrors.tuna.tsinghua.edu.cn/help/epel/					//get the tsinghua yum
-http://www.07net01.com/2014/09/170342.html						//get the build-essential
-http://www.cnblogs.com/hlb430/archive/2012/05/11/2613045.html	//get the other yum
-http://bbs.csdn.net/topics/390606349							//about de share
+http://blog.csdn.net/lcj200813138020/article/details/46914161  		//change the yum base
+https://mirrors.tuna.tsinghua.edu.cn/help/epel/				//get the tsinghua yum
+http://www.07net01.com/2014/09/170342.html				//get the build-essential
+http://www.cnblogs.com/hlb430/archive/2012/05/11/2613045.html		//get the other yum
+http://bbs.csdn.net/topics/390606349					//about de share
