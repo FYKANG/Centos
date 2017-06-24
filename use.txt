@@ -1,0 +1,167 @@
+
+<<..............................................................................................................................................>>
+
+
+进入mysql：mysql -h localhost -u root -p    (在mysql安装目录下进行)
+查看库：show databases;
+选择库：use 库名
+//MYSQL 
+查看表：show tables;
+字符集选择：set names utf8;
+创建表：create table 表名(
+)
+示例：create table think_user(
+id int auto_increment primary key,
+content varchar(200),
+user varchar(200),
+title varchar(200),
+`time` timestamp NOT NULL default CURRENT_TIMESTAMP
+) charset utf8;
+添加数据：insert into think_test
+示例：insert into think_u (id,content,time) values (1,'test',963);
+insert into think_u (user,title,content) values ('killer','food','new food out');
+查询所有数据：select * from 表名;
+快速清空表：truncate 表名
+查看表头：show columns from 表名;
+删除表：drop table  表名;
+使用命令show global variables like 'port';查看端口号
+建立一个名为think_test的数据库:create database think_test;
+
+<<..............................................................................................................................................>>
+//JAVA
+修饰字段
+	public ------在哪都能用;
+	protected  ------在派生类内用，同一个包内用;
+	（缺损）------ 在同一个包内用;
+	private ------ 在此类中使用，在派生类中可使用，在类外无法使用，在当前类范围;
+	super() ------ 调用基类构造方法;
+	this.字段 ------ 调用字段;
+	this() ------ 调用其他方法; 
+	abstract ------	抽象类;
+	interface ------ 定义接口;
+	implements ----- 接口的使用;
+
+类的继承
+	Object ------ 无指定基类的默认基类；
+	继承者 extends （被继承）------ 继承一个类;
+	可添加与基类名称相同，签名相同的方法 ------ 方法的重写;
+	super ------表示超类；
+	super.M() ----- 在派生类覆盖基类方法M是，用super.M(<参数>)调用基类的M方法;
+
+
+接口成员
+	常数（不写static final）;
+	抽象方法（不写public）;
+	缺省方法;
+	静态方法;
+
+		|--静态类
+嵌入类 -|			|--内部类（成员）
+		|--内部类---|--局部类
+					|--匿名类
+
+形参
+	int...numbers-----形参数组的写法;
+
+匿名类语法
+	new [基类名|抽象类名|接口名]
+
+捕获异常
+	try{
+
+	}catch(异常类 变量){ //可有多个
+
+
+	}finally{ //最多个1
+
+	}
+	有catch是可以无finally;有finally是可以无catch;
+	
+
+
+
+
+
+
+
+
+<<..............................................................................................................................................>>
+//Thinkphp
+MYSQL的连接
+	'DB_TYPE'   => 'mysql', // 数据库类型
+	'DB_HOST'   => 'localhost', // 服务器地址
+	'DB_NAME'   => 'thinkphp', // 数据库名
+	'DB_USER'   => 'root', // 用户名
+	'DB_PWD'    => '', // 密码
+	'DB_PORT'   => 3306, // 端口
+	'DB_PREFIX' => 'think_', // 数据库表前缀 
+	'DB_CHARSET'=> 'utf8', // 字符集
+方法
+	U方法
+		U('地址表达式',['参数'],['伪静态后缀'],['显示域名'])
+		{:U('Admin/User/save','','')}
+	跳转
+		 if($result){
+      		 $this->success('新增成功', 'main'); //设置成功后跳转页面的地址，默认的返回页面是$_SERVER['HTTP_REFERER']
+        
+     	 } else {
+	          $this->error('新增失败');//错误页面的默认跳转页面是返回前一页，通常不需要设置
+	     }
+	显示模板		
+		$this->display('模板名称');
+	模板的输出值
+		控制器中
+		$name = 'ThinkPHP';
+		$this->assign('name',$name);
+		$this->display();
+		模板中
+		{$name}
+	模板中的循环输出
+		控制器中
+		$User = M('User');
+		$list = $User->limit(10)->select();
+		$this->assign('list',$list);
+		模板中
+		<volist name="list" id="vo">
+		{$vo.id}:{$vo.name}<br/>
+		</volist>
+
+
+//     	$data['user']='ol';//将ol放入user字段中，$data['字段名']='写入内容';
+//     	$map['id']=1;//将1放入id字段中，map['id']=写入id;
+//     	$user->where($map)->save($data);//修改id地址为1，的user字段，修改为ol;
+//----------------------------------//
+//     	$data['id']=1;//设置data['id']为1；
+//     	$data['user']='olkill';//将olkill放入user字段中，$data['字段名']='写入内容';
+//     	$user->save($data);//修改id地址为1，的user字段，修改为ol，此方法可省略wher()操作;
+//----------------------------------//
+//     	$map['id']=1;
+//     	$user->where($map)->setField('user','newkill');//修改id地址为1，字段为user的内容，改为newkill;
+     //  echo $this->$map;
+
+nginx -s reload
+
+<<..............................................................................................................................................>>
+<?php 
+	$conn=mysql_connect('localhost','root','fyk159753');//连接数据库
+	mysql_query('use thinkphp',$conn);//选择database
+	mysql_query('set names utf8',$conn);//选择编码模式
+	$sql='select * from think_user';//选择表
+	$rs =mysql_query($sql,$conn);//读取表
+	$row=mysql_fetch_assoc($rs);//读取数据
+	echo $row['user'];//打印数据
+?>
+
+<<...............................................................................................................................................>>
+CentOS
+Yum
+
+在ubuntu中安装完系统后，可以直接使用apt-get install build-essential命令安装常用的开发编译工具包。在诸如CentOS这样的使用Yum包管理的系统中，其实也有类似的实现方法。解决方案是使用如下命令：
+
+yum groupinstall "Development Tools"
+
+http://blog.csdn.net/lcj200813138020/article/details/46914161  	//change the yum base
+https://mirrors.tuna.tsinghua.edu.cn/help/epel/					//get the tsinghua yum
+http://www.07net01.com/2014/09/170342.html						//get the build-essential
+http://www.cnblogs.com/hlb430/archive/2012/05/11/2613045.html	//get the other yum
+http://bbs.csdn.net/topics/390606349							//about de share

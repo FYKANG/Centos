@@ -1,0 +1,35 @@
+/* by K */
+2017/6/21
+
+begin use linux
+CentOS 7
+
+201/6/22
+
+yum install 		/* get de new base; get the epel yum; get the rem yum */
+install vm-tool 	/* change the CD-ROM */
+about vi 	
+		-vi a b c       change the a and b and c
+		-:n		go to the next file
+		-:N		go to the prev file	
+		-i 		enter the content in the cursor (Inser mode)
+		-a 		enter the content in the next cursor
+		-v 		use the view mode
+		-yy 		in the view mode we can use this command copy some this
+		-p		paste the content
+		-j		move the cursor down
+		-k		move the cursor up
+		-h		move the cursor left
+		-l		move the cursor right
+		-:w		save the content
+		-:q		quite the file
+		-:q!		forced exit
+		-:wq  		save the content then quite
+		-dd		delete the line where cursor on
+	
+yum groupinstall "Development Tools"				/* about build-essential */
+http://blog.csdn.net/lcj200813138020/article/details/46914161  	/* change the yum base */
+https://mirrors.tuna.tsinghua.edu.cn/help/epel/			/* get the tsinghua yum */
+http://www.07net01.com/2014/09/170342.html			/* get the build-essential/ */
+http://www.cnblogs.com/hlb430/archive/2012/05/11/2613045.html	/* get the other yum */
+http://bbs.csdn.net/topics/390606349				/* about de share */
