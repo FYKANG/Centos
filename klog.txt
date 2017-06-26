@@ -97,7 +97,7 @@ Login our github.Click "Edit profile".Click "SSH and GPG keys".
 We could add a new ssh keys in here.Click "New SSH key".
 The title you cloud write something what you like.The key is the content in the "rd_rsa".We copy that and add in the key.
 
-#ssh -T git@github.com					/* If tip:You've successfully authenticate,but GitHub does not provide shell acces.You successfully connection the github */
+#ssh -T git@github.com						/* If tip:You've successfully authenticate,but GitHub does not provide shell acces.You successfully connection the github */
 
 End,we could test.
 
@@ -116,3 +116,49 @@ http://www.cnblogs.com/xuange306/articles/6800794.html
 http://www.cnblogs.com/xuange306/p/6403907.html
 http://www.cnblogs.com/wangmingshun/p/5424767.html
 
+2017/6/26
+
+关于git与github的基础命令总结
+
+git的初始化设置
+	#git config --global user.name "user.name"					/* 建立git用户名 "ser.name"=>git用户名 */
+	#git config --global user.email "yourmail@youremail.com"	/* 建立git邮箱 yourmail@youremail.com"=>git邮箱" */
+	#ssh-keygen -t rsa -C "youremail@youremail.com"				/* 创建密钥，密钥存放位置为 ~/.ssh */
+	#ssh -T git@github.com 										/* 连接测试 */
+	#git init 													/* 在当前目录建立仓库 */
+	
+git基本操作
+	#git add demon												/* 将demon添加到缓存区 */
+	#git diff demon												/* 查看demon的修改信息 */
+	#git commit -m "magess"										/* 将缓存区内容提交给当前分支，提交留言为magess */
+	#git status 												/* 状态查询 */
+	#git log 													/* 查看git 日志 */
+	#git reset  –-hard HEAD^ 									/* 回退到上个版本 */
+	#git reset  –-hard HEAD~n									/* 回退到n个版本 */
+	#git reflog													/* 版本号查询 */
+	#git reset  –-hard edition									/* 回退到版本号为edition的版本 */
+	#git checkout  — file 										/* 把file文件在工作区做的修改全部撤销
+																	1.file自动修改后，还没有放到暂存区，使用 撤销修改就回到和版本库一模一样的状态。
+																	2.另外一种是file已经放入暂存区了，接着又作了修改，撤销修改就回到添加暂存区后的状态。
+																	(也可以适用于文件删除后的恢复)
+																*/
+	#git branch													/* 查看所有分支(当前分支前面有*标记) */
+	#git branch demon 											/* 创建名为demon的分支 */
+	#git checkout demon 										/* 切换到demon分支 */
+	#git checkout –b demon 										/* 创建并切换到demon分支 */
+	#git branch –d demon   										/* 删除demon分支 */
+	#git merge dev 												/* 将demon分支合并到主分支 */
+	#git stash 													/* 工作现场掩埋 */
+	#git stash list 											/* 查看工作现场列表 */
+	#git stash apply											/* 恢复工作现场 */
+	#git stash drop 											/* 删除一条工作现场 */
+	#git stash pop 												/* 恢复并删除工作现场 */
+
+本地库与远程库的关联操作
+	#git remote add origin https://github.com/githubName/repositoriesName 	/* 设置github远程库连接  origin=>远程库名称(自定义) githubName=>git账号 repositoriesName=>远程库名 */
+	#git push -u origin master 									/* 把本地库的主分支master推送到远程库，第一次推送加-u参数，以后可以不加 */
+	#git clone https://github.com/githubName/repositoriesName 	/* 克隆远程库到本地 githubName=>git账号 repositoriesName=>远程库名(克隆后的远程库名默认为origin) */
+	#git remote 												/* 查看远程库信息 */
+	#git remote –v 												/* 查看远程库详细信息 */
+	#git fetch origin master 									/* 抓取origin远程库的主分支 */
+	#git fetch origin master:demon 								/* 抓取origin远程库的主分支放入demon分支内 */
