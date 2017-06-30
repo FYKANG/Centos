@@ -8,23 +8,23 @@ CentOS 7
 * about vi
 	```
 	#vi a b c	//change the a and b and c	编辑a,b,c三个文档
+	* -:n		//go to the next file	打开下一个文档
+	* -:N		//go to the prev file	打开上一个文档	
+	* -i 		//enter the content in the cursor (Inser mode)	在光标处插入信息
+	* -a 		//enter the content in the next cursor	在光标后插入信息
+	* -v 		//use the view mode	使用观察模式
+	* -yy 		//in the view mode we can use this command copy some this	在观察模式下进行复制
+	* -p		//paste the content	粘贴信息
+	* -j		//move the cursor down	向下移动光标
+	* -k		//move the cursor up	向上移动光标
+	* -h		//move the cursor left	向左移动光标
+	* -l		//move the cursor right	向右移动光标
+	* -:w		//save the content	保存操作
+	* -:q		//quite the file	退出操作
+	* -:q!		//forced exit		强制退出
+	* -:wq  	//save the content then quite	保存并退出
+	* -dd		//delete the line where cursor on	删除当前行
 	```
-	* -:n				go to the next file			打开下一个文档
-	* -:N				go to the prev file			打开上一个文档	
-	* -i 				enter the content in the cursor (Inser mode)	在光标处插入信息
-	* -a 				enter the content in the next cursor			在光标后插入信息
-	* -v 				use the view mode			使用观察模式
-	* -yy 			in the view mode we can use this command copy some this	在观察模式下进行复制
-	* -p				paste the content			粘贴信息
-	* -j				move the cursor down		向下移动光标
-	* -k				move the cursor up			向上移动光标
-	* -h				move the cursor left		向左移动光标
-	* -l				move the cursor right		向右移动光标
-	* -:w				save the content			保存操作
-	* -:q				quite the file				退出操作
-	* -:q!			forced exit					强制退出
-	* -:wq  			save the content then quite	保存并退出
-	* -dd				delete the line where cursor on	删除当前行
 	
 * yum groupinstall "Development Tools"							/*about build-essential*/
 * http://blog.csdn.net/lcj200813138020/article/details/46914161  	/*change the yum base*/
