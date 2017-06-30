@@ -76,9 +76,8 @@ we need to add : export PATH="/usr/local/git/bin:$PATH"
 #passwd git
 #su git
 ```
-If finsh all.We're already install git.
-
-Second,we need to get the ssh key.
+	If finsh all.We're already install git.
+* Second,we need to get the ssh key.
 ```
 #git config --global user.name"user.name"				/* "user.name" is your username */
 #git config --global user.email"yourmail@youremail.com"	/* "yourmail@yourmail.com" is your email */
@@ -86,17 +85,16 @@ Second,we need to get the ssh key.
 #ssh-keygen -t rsa -C "youremail@youremail.com"
 ```
 if you finsh that,you could find 2 files be creat."rd_rsa" and "id_rsa.pub"
-
-Third,we need to sgin up a github.
-The github web:https://github.com/
-Then we need to creat a repositories.
-Login our github.Click "Edit profile".Click "SSH and GPG keys".
-We could add a new ssh keys in here.Click "New SSH key".
-The title you cloud write something what you like.The key is the content in the "rd_rsa".We copy that and add in the key.
+	Third,we need to sgin up a github.
+* The github web:https://github.com/
+	Then we need to creat a repositories.
+	Login our github.Click "Edit profile".Click "SSH and GPG keys".
+	We could add a new ssh keys in here.Click "New SSH key".
+	The title you cloud write something what you like.The key is the content in the "rd_rsa".We copy that and add in the key.
 ```
 #ssh -T git@github.com									/* If tip:You've successfully authenticate,but GitHub does not provide shell acces.You successfully connection the github */
 ```
-End,we could test.
+* End,we could test.
 ```
 #cd /home/git
 #vi test
@@ -106,7 +104,7 @@ End,we could test.
 #git remote add origin https://github.com/YourGithubName/YourRepositoriesName
 #git push -u origin master
 ```
-You could see your code had push the github!
+* You could see your code had push the github!
 
 Reference materials
 http://www.cnblogs.com/xuange306/articles/6800794.html
