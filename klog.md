@@ -58,7 +58,7 @@ Distributor ID:	CentOS
 Description:	CentOS Linux release 7.3.1611 (Core) 
 Release:	7.3.1611
 Codename:	Core
-* First we need to install the git.My base yum is Tsinghua.The yum newest edition is 1.8.3.1 but the newest edition is 2.13.1.So i decide to install the new edition.
+* First we need to install the git.My base yum is Tsinghua.The yum newest edition is 1.8.3.1 but the newest edition is 2.13.1.So i decide to install the new edition.第一步我们需要安装git。我使用了清华源，在源库中最新版本为1.8.3.1，但是git官方发布的最新版本为2.13.1。所以我决定使用新的版本。
 ```
 #yum remove git	
 ```
@@ -113,74 +113,166 @@ If finsh all.We're already install git.如果你已经完成以上所有步骤�
 ```
 check the ssh keys.if tip "No such file or directory".you need to creat a ssh keys.检测是否生成ssh密钥，如果提示"No such file or directory"，则需要创建ssh密钥
 if you finsh that,you could find 2 files be creat."rd_rsa" and "id_rsa.pub"如果完成以上步骤，你将得到2个文件分别是"rd_rsa"和"id_rsa.pub"
-* Third,we need to sgin up a github.
-	* The github web:https://github.com/
-	* Then we need to creat a repositories.
-	* Login our github.Click "Edit profile".Click "SSH and GPG keys".
-	* We could add a new ssh keys in here.Click "New SSH key".
-	* The title you cloud write something what you like.The key is the content in the "rd_rsa".We copy that and add in the key.
+* Third,we need to sgin up a github.我们需要注册一个github账号
+	* The github web:https://github.com/	这是github的地址
+	* Then we need to creat a repositories.	注册后我们需要建立一个新的仓库
+	* Login our github.Click "Edit profile".Click "SSH and GPG keys".	登录github点击Edit profile进入页面后点击SSH and GPG keys
+	* We could add a new ssh keys in here.Click "New SSH key".	添加一个新的ssh密钥
+	* The title you cloud write something what you like.The key is the content in the "id_rsa.pub".We copy that and add in the key.	名称随你填，复制id_rsa.pub里面的内容到key中。
+```
+#ssh -T git@github.com
+```
+If tip:You've successfully authenticate,but GitHub does not provide shell acces.You successfully connection the github检查是否连接成功，如果提示你If tip:You've successfully authenticate,but GitHub does not provide shell acces.那么表示连接成功
 
-#ssh -T git@github.com									/* If tip:You've successfully authenticate,but GitHub does not provide shell acces.You successfully connection the github */
-
-* End,we could test.
-
-#cd /home/git
+* End,we could test.最后我们可以进行测试了。
+```
+#git init
+```
+在当前目录建立一个仓库
+```
 #vi test
 #:wq
 #git add test
 #git commit -m "test"
 #git remote add origin https://github.com/YourGithubName/YourRepositoriesName
 #git push -u origin master
+```
 
-* You could see your code had push the github!
-
-Reference materials
-http://www.cnblogs.com/xuange306/articles/6800794.html
-http://www.cnblogs.com/xuange306/p/6403907.html
-http://www.cnblogs.com/wangmingshun/p/5424767.html
+* You could see your code had push the github!你可以看到你的代码已经被推送到github上了
+* Reference materials参考资料
+	* http://www.cnblogs.com/xuange306/articles/6800794.html
+	* http://www.cnblogs.com/xuange306/p/6403907.html
+	* http://www.cnblogs.com/wangmingshun/p/5424767.html
 
 ## 2017/6/26
-关于git与github的基础命令总结
+### 关于git与github的基础命令总结
+#### git的初始化设置
+```
+#git config --global user.name "user.name"
+```
+建立git用户名 "ser.name"=>git用户名
+```
+#git config --global user.email "yourmail@youremail.com"
+```
+建立git邮箱 yourmail@youremail.com"=>git邮箱"
+```
+#ssh-keygen -t rsa -C "youremail@youremail.com"	
+```
+创建密钥，密钥存放位置为 ~/.ssh
+```
+#ssh -T git@github.com 	
+```
+连接测试 
+```
+#git init 													
+```
+在当前目录建立仓库
+### git基本操作
+```
+#git add demon												
+```
+将demon添加到缓存区
+```
+#git diff demon												
+```
+查看demon的修改信息
+```
+#git commit -m "magess"										
+```
+将缓存区内容提交给当前分支，提交留言为magess
+```
+#git status 												
+```
+状态查询
+```
+#git log
+```
+查看git 日志
+```
+#git reset  –-hard HEAD^ 
+```
+回退到上个版本
+```
+#git reset  –-hard HEAD~n
+```
+回退到n个版本
+```
+#git reflog
+```
+版本号查询
+```
+#git reset  –-hard edition
+```
+回退到版本号为edition的版本
+```
+#git checkout  — file 
+```
+把file文件在工作区做的修改全部撤销
+	1.file自动修改后，还没有放到暂存区，使用 撤销修改就回到和版本库一模一样的状态。
+	2.另外一种是file已经放入暂存区了，接着又作了修改，撤销修改就回到添加暂存区后的状态。
+	(也可以适用于文件删除后的恢复)											
+```#git branch
+```
+查看所有分支(当前分支前面有*标记)
+```#git branch demon
+```
+创建名为demon的分支
+```#git checkout demon
+```
+切换到demon分支
+```#git checkout –b demon
+```
+创建并切换到demon分支
+```
+#git branch –d demon
+```
+删除demon分支
+```#git merge dev
+```
+将demon分支合并到当前分支
+```#git stash
+```
+工作现场掩埋
+```
+#git stash list
+```
+查看工作现场列表
+```#git stash apply
+```
+恢复工作现场
+```
+#git stash drop 
+```
+删除一条工作现场 
+```#git stash pop
+```
+恢复并删除工作现场
 
-git的初始化设置
-	#git config --global user.name "user.name"					/* 建立git用户名 "ser.name"=>git用户名 */
-	#git config --global user.email "yourmail@youremail.com"	/* 建立git邮箱 yourmail@youremail.com"=>git邮箱" */
-	#ssh-keygen -t rsa -C "youremail@youremail.com"				/* 创建密钥，密钥存放位置为 ~/.ssh */
-	#ssh -T git@github.com 										/* 连接测试 */
-	#git init 													/* 在当前目录建立仓库 */
-	
-git基本操作
-	#git add demon												/* 将demon添加到缓存区 */
-	#git diff demon												/* 查看demon的修改信息 */
-	#git commit -m "magess"										/* 将缓存区内容提交给当前分支，提交留言为magess */
-	#git status 												/* 状态查询 */
-	#git log 													/* 查看git 日志 */
-	#git reset  –-hard HEAD^ 									/* 回退到上个版本 */
-	#git reset  –-hard HEAD~n									/* 回退到n个版本 */
-	#git reflog													/* 版本号查询 */
-	#git reset  –-hard edition									/* 回退到版本号为edition的版本 */
-	#git checkout  — file 										/* 把file文件在工作区做的修改全部撤销
-																	1.file自动修改后，还没有放到暂存区，使用 撤销修改就回到和版本库一模一样的状态。
-																	2.另外一种是file已经放入暂存区了，接着又作了修改，撤销修改就回到添加暂存区后的状态。
-																	(也可以适用于文件删除后的恢复)
-																*/
-	#git branch													/* 查看所有分支(当前分支前面有*标记) */
-	#git branch demon 											/* 创建名为demon的分支 */
-	#git checkout demon 										/* 切换到demon分支 */
-	#git checkout –b demon 										/* 创建并切换到demon分支 */
-	#git branch –d demon   										/* 删除demon分支 */
-	#git merge dev 												/* 将demon分支合并到当前分支 */
-	#git stash 													/* 工作现场掩埋 */
-	#git stash list 											/* 查看工作现场列表 */
-	#git stash apply											/* 恢复工作现场 */
-	#git stash drop 											/* 删除一条工作现场 */
-	#git stash pop 												/* 恢复并删除工作现场 */
-
-本地库与远程库的关联操作
-	#git remote add origin https://github.com/githubName/repositoriesName 	/* 设置github远程库连接  origin=>远程库名称(自定义) githubName=>git账号 repositoriesName=>远程库名 */
-	#git push -u origin master 									/* 把本地库的主分支master推送到远程库，第一次推送加-u参数，以后可以不加 */
-	#git clone https://github.com/githubName/repositoriesName 	/* 克隆远程库到本地 githubName=>git账号 repositoriesName=>远程库名(克隆后的远程库名默认为origin) */
-	#git remote 												/* 查看远程库信息 */
-	#git remote –v 												/* 查看远程库详细信息 */
-	#git fetch origin master 									/* 抓取origin远程库的主分支 */
-	#git fetch origin master:demon 								/* 抓取origin远程库的主分支放入demon分支内 */
+### 本地库与远程库的关联操作
+```
+#git remote add origin https://github.com/githubName/repositoriesName
+```
+设置github远程库连接  origin=>远程库名称(自定义) githubName=>git账号 repositoriesName=>远程库名
+```
+#git push -u origin master
+```
+把本地库的主分支master推送到远程库，第一次推送加-u参数，以后可以不加
+```
+#git clone https://github.com/githubName/repositoriesName
+```
+克隆远程库到本地 githubName=>git账号 repositoriesName=>远程库名(克隆后的远程库名默认为origin)
+```#git remote
+```
+查看远程库信息
+```
+#git remote –v
+```
+查看远程库详细信息
+```
+#git fetch origin master
+```
+抓取origin远程库的主分支
+```
+#git fetch origin master:demon
+```
+抓取origin远程库的主分支放入demon分支内
