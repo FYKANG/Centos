@@ -7,9 +7,8 @@ CentOS 7
 * install vm-tool 	/*change the CD-ROM*/
 * about vi
 	```
-	#vi a b c
+	#vi a b c	//change the a and b and c	编辑a,b,c三个文档
 	```
-	change the a and b and c	编辑a,b,c三个文档
 	* -:n				go to the next file			打开下一个文档
 	* -:N				go to the prev file			打开上一个文档	
 	* -i 				enter the content in the cursor (Inser mode)	在光标处插入信息
