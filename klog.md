@@ -39,15 +39,19 @@ CentOS 7
 * http://bbs.csdn.net/topics/390606349					
 	* about de share		关于share
 ## 2017/6/25
-Ready use git.I decide to use the github become my server repositories.Now begin!
-This my PC informantion.
+Ready use git.I decide to use the github become my server repositories.Now begin!准备使用git。我决定使用github作为我的远程库。
+This my PC informantion.这是我的环境配置
 ```
 #cat /proc/version
 ```
 Linux version 3.10.0-514.21.2.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-11) (GCC) ) #1 SMP Tue Jun 20 12:24:47 UTC 2017
 CentOS Linux release 7.3.1611 (Core)
 ```
-#lsb-release -a	/* if you want to us this command you need to install lsb and you could install that by this command #yum install -y redhat-lsb */
+#lsb-release -a	
+```
+if you want to us this command you need to install lsb and you could install that by this command如果你想使用这条命令需要先安装lsb
+```
+#yum install -y redhat-ls
 ```
 LSB Version:	:core-4.1-amd64:core-4.1-noarch:cxx-4.1-amd64:cxx-4.1-noarch:desktop-4.1-amd64:desktop-4.1-noarch:languages-4.1-amd64:languages-4.1-noarch:printing-4.1-amd64:printing-4.1-noarch
 Distributor ID:	CentOS
@@ -56,46 +60,70 @@ Release:	7.3.1611
 Codename:	Core
 * First we need to install the git.My base yum is Tsinghua.The yum newest edition is 1.8.3.1 but the newest edition is 2.13.1.So i decide to install the new edition.
 ```
-#yum remove git		/* remove the old editon */
-/* install the library */
+#yum remove git	
+```
+remove the old editon移出旧版本
+```
 #yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
 #yum install gcc perl-ExtUtils-MakeMaker
-#wget https://github.com/git/git/archive/v2.9.2.tar.gz	/* get the new git */
+```
+install the library安装所需要的库
+```
+#wget https://github.com/git/git/archive/v2.9.2.tar.gz
+```
+get the new git下载新版本git
+```
 #tar -xzvf v2.9.2.tar.gz
 #cd git-2.9.2
 #make prefix=/usr/local/git all
 #make prefix=/usr/local/git install
-/* export path */
 #vi /etc/profile
-we need to add : export PATH="/usr/local/git/bin:$PATH"
-#source /etc/profile 	/* effective immediately */
-#git --version			/* the edition informantion */
-/* create a new group */ 
+```
+we need to add我们需要添加环境 : export PATH="/usr/local/git/bin:$PATH"
+```
+#source /etc/profile 	
+```
+effective immediately修改环境，并立即生效
+```
+#git --version			
+```
+the edition informantion查询版本信息
+```
 #groupadd git
 #useradd git -g git
 #passwd git
 #su git
 ```
-If finsh all.We're already install git.
-* Second,we need to get the ssh key.
+create a new group创建一个新的用户组
+If finsh all.We're already install git.如果你已经完成以上所有步骤，我们已经安装完git了
+* Second,we need to get the ssh key.第二步，我们需要获取ssh密钥
 ```
-#git config --global user.name"user.name"				/* "user.name" is your username */
-#git config --global user.email"yourmail@youremail.com"	/* "yourmail@yourmail.com" is your email */
-#cd ~/.shh												/* check the ssh keys.if tip "No such file or directory".you need to creat a ssh keys */
+#git config --global user.name"user.name"				
+```
+"user.name" is your username.创建一个名为user.name的用户
+```
+#git config --global user.email"yourmail@youremail.com"	
+```
+"yourmail@yourmail.com" is your email.为该用户创建一个yourmail@yourmail.com的email地址
+```
+#cd ~/.shh
+```
+```
 #ssh-keygen -t rsa -C "youremail@youremail.com"
 ```
-if you finsh that,you could find 2 files be creat."rd_rsa" and "id_rsa.pub"
-	Third,we need to sgin up a github.
-* The github web:https://github.com/
-	Then we need to creat a repositories.
-	Login our github.Click "Edit profile".Click "SSH and GPG keys".
-	We could add a new ssh keys in here.Click "New SSH key".
-	The title you cloud write something what you like.The key is the content in the "rd_rsa".We copy that and add in the key.
-```
+check the ssh keys.if tip "No such file or directory".you need to creat a ssh keys.检测是否生成ssh密钥，如果提示"No such file or directory"，则需要创建ssh密钥
+if you finsh that,you could find 2 files be creat."rd_rsa" and "id_rsa.pub"如果完成以上步骤，你将得到2个文件分别是"rd_rsa"和"id_rsa.pub"
+* Third,we need to sgin up a github.
+	* The github web:https://github.com/
+	* Then we need to creat a repositories.
+	* Login our github.Click "Edit profile".Click "SSH and GPG keys".
+	* We could add a new ssh keys in here.Click "New SSH key".
+	* The title you cloud write something what you like.The key is the content in the "rd_rsa".We copy that and add in the key.
+
 #ssh -T git@github.com									/* If tip:You've successfully authenticate,but GitHub does not provide shell acces.You successfully connection the github */
-```
+
 * End,we could test.
-```
+
 #cd /home/git
 #vi test
 #:wq
@@ -103,7 +131,7 @@ if you finsh that,you could find 2 files be creat."rd_rsa" and "id_rsa.pub"
 #git commit -m "test"
 #git remote add origin https://github.com/YourGithubName/YourRepositoriesName
 #git push -u origin master
-```
+
 * You could see your code had push the github!
 
 Reference materials
