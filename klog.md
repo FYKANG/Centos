@@ -76,7 +76,7 @@ we need to add : export PATH="/usr/local/git/bin:$PATH"
 #passwd git
 #su git
 ```
-	If finsh all.We're already install git.
+If finsh all.We're already install git.
 * Second,we need to get the ssh key.
 ```
 #git config --global user.name"user.name"				/* "user.name" is your username */
