@@ -126,7 +126,7 @@ If tip:You've successfully authenticate,but GitHub does not provide shell acces.
 
 * End,we could test.最后我们可以进行测试了。
 ```
-#git init
+#git init 
 ```
 在当前目录建立一个仓库
 ```
