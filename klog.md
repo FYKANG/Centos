@@ -3,33 +3,33 @@
 begin use linux
 CentOS 7
 ## 2017/6/22
-	yum install		/*get the new base; get the epel yum; get the rem yum*/	
-	install vm-tool 	/*change the CD-ROM*/
-	about vi 	
-		-vi a b c       change the a and b and c	编辑a,b,c三个文档
-		-:n				go to the next file			打开下一个文档
-		-:N				go to the prev file			打开上一个文档	
-		-i 				enter the content in the cursor (Inser mode)	在光标处插入信息
-		-a 				enter the content in the next cursor			在光标后插入信息
-		-v 				use the view mode			使用观察模式
-		-yy 			in the view mode we can use this command copy some this	在观察模式下进行复制
-		-p				paste the content			粘贴信息
-		-j				move the cursor down		向下移动光标
-		-k				move the cursor up			向上移动光标
-		-h				move the cursor left		向左移动光标
-		-l				move the cursor right		向右移动光标
-		-:w				save the content			保存操作
-		-:q				quite the file				退出操作
-		-:q!			forced exit					强制退出
-		-:wq  			save the content then quite	保存并退出
-		-dd				delete the line where cursor on	删除当前行
+* yum install		/*get the new base; get the epel yum; get the rem yum*/	
+* install vm-tool 	/*change the CD-ROM*/
+* about vi 	
+	* -vi a b c       change the a and b and c	编辑a,b,c三个文档
+	* -:n				go to the next file			打开下一个文档
+	* -:N				go to the prev file			打开上一个文档	
+	* -i 				enter the content in the cursor (Inser mode)	在光标处插入信息
+	* -a 				enter the content in the next cursor			在光标后插入信息
+	* -v 				use the view mode			使用观察模式
+	* -yy 			in the view mode we can use this command copy some this	在观察模式下进行复制
+	* -p				paste the content			粘贴信息
+	* -j				move the cursor down		向下移动光标
+	* -k				move the cursor up			向上移动光标
+	* -h				move the cursor left		向左移动光标
+	* -l				move the cursor right		向右移动光标
+	* -:w				save the content			保存操作
+	* -:q				quite the file				退出操作
+	* -:q!			forced exit					强制退出
+	* -:wq  			save the content then quite	保存并退出
+	* -dd				delete the line where cursor on	删除当前行
 	
-	yum groupinstall "Development Tools"							/*about build-essential*/
-	http://blog.csdn.net/lcj200813138020/article/details/46914161  	/*change the yum base*/
-	https://mirrors.tuna.tsinghua.edu.cn/help/epel/					/*get the tsinghua yum*/
-	http://www.07net01.com/2014/09/170342.html						/*get the build-essential/*/
-	http://www.cnblogs.com/hlb430/archive/2012/05/11/2613045.html	/* get the other yum */
-	http://bbs.csdn.net/topics/390606349							/*about de share*/
+* yum groupinstall "Development Tools"							/*about build-essential*/
+* http://blog.csdn.net/lcj200813138020/article/details/46914161  	/*change the yum base*/
+* https://mirrors.tuna.tsinghua.edu.cn/help/epel/					/*get the tsinghua yum*/
+* http://www.07net01.com/2014/09/170342.html						/*get the build-essential/*/
+* http://www.cnblogs.com/hlb430/archive/2012/05/11/2613045.html	/* get the other yum */
+* http://bbs.csdn.net/topics/390606349							/*about de share*/
 ## 2017/6/25
 
 Ready use git.I decide to use the github become my server repositories.Now begin!
@@ -112,8 +112,7 @@ http://www.cnblogs.com/xuange306/articles/6800794.html
 http://www.cnblogs.com/xuange306/p/6403907.html
 http://www.cnblogs.com/wangmingshun/p/5424767.html
 
-2017/6/26
-
+## 2017/6/26
 关于git与github的基础命令总结
 
 git的初始化设置
