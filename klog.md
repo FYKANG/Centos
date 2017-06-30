@@ -208,8 +208,8 @@ If tip:You've successfully authenticate,but GitHub does not provide shell acces.
 #git checkout  — file 
 ```
 >把file文件在工作区做的修改全部撤销
->>1.file自动修改后，还没有放到暂存区，使用 撤销修改就回到和版本库一模一样的状态。<br>
-2.另外一种是file已经放入暂存区了，接着又作了修改，撤销修改就回到添加暂存区后的状态。
+>>1.file自动修改后，还没有放到暂存区，使用 撤销修改就回到和版本库一模一样的状态。
+2.另外一种是file已经放入暂存区了，接着又作了修改，撤销修改就回到添加暂存区后的状态。<br>
 (也可以适用于文件删除后的恢复)											
 ```
 #git branch
