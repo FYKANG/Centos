@@ -5,8 +5,8 @@ begin use linux
 CentOS 7
 
 ## 2017/6/22
-	* yum install 		/*get the new base; get the epel yum; get the rem yum */	
-	* install vm-tool 	/*change the CD-ROM */
+	* yum install 		/*get the new base; get the epel yum; get the rem yum*/	
+	* install vm-tool 	/*change the CD-ROM*/
 	* about vi 	
 		* -vi a b c       change the a and b and c	编辑a,b,c三个文档
 		* -:n				go to the next file			打开下一个文档
@@ -26,20 +26,20 @@ CentOS 7
 		* -:wq  			save the content then quite	保存并退出
 		* -dd				delete the line where cursor on	删除当前行
 	
-	* yum groupinstall "Development Tools"							/* about build-essential */
-	* http://blog.csdn.net/lcj200813138020/article/details/46914161  	/* change the yum base */
-	* https://mirrors.tuna.tsinghua.edu.cn/help/epel/					/* get the tsinghua yum */
-	* http://www.07net01.com/2014/09/170342.html						/* get the build-essential/ */
+	* yum groupinstall "Development Tools"							/*about build-essential*/
+	* http://blog.csdn.net/lcj200813138020/article/details/46914161  	/*change the yum base*/
+	* https://mirrors.tuna.tsinghua.edu.cn/help/epel/					/*get the tsinghua yum*/
+	* http://www.07net01.com/2014/09/170342.html						/*get the build-essential/*/
 	* http://www.cnblogs.com/hlb430/archive/2012/05/11/2613045.html	/* get the other yum */
-	* http://bbs.csdn.net/topics/390606349							/* about de share */
+	* http://bbs.csdn.net/topics/390606349							/*about de share*/
 
-2017/6/25
+## 2017/6/25
 
 Ready use git.I decide to use the github become my server repositories.Now begin!
 
 This my PC informantion.
 
-# cat /proc/version
+#cat /proc/version
 Linux version 3.10.0-514.21.2.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-11) (GCC) ) #1 SMP Tue Jun 20 12:24:47 UTC 2017
 CentOS Linux release 7.3.1611 (Core)
 
