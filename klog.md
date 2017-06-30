@@ -26,13 +26,18 @@ CentOS 7
 	#dd		//delete the line where cursor on	删除当前行
 	```
 ```	
-#yum groupinstall "Development Tools"	/*about build-essential*/
+#yum groupinstall "Development Tools"	//about build-essential加载常用库
 ```
-* http://blog.csdn.net/lcj200813138020/article/details/46914161  	change the yum base	关于修改源
-* https://mirrors.tuna.tsinghua.edu.cn/help/epel/			get the tsinghua yum	关于清华源地址
-* http://www.07net01.com/2014/09/170342.html				get the build-essential	加载常用库
-* http://www.cnblogs.com/hlb430/archive/2012/05/11/2613045.html		get the other yum	获得第三方源
-* http://bbs.csdn.net/topics/390606349					about de share		关于share
+* http://blog.csdn.net/lcj200813138020/article/details/46914161  	
+	* change the yum base	关于修改源
+* https://mirrors.tuna.tsinghua.edu.cn/help/epel/			
+	* get the tsinghua yum	关于清华源地址
+* http://www.07net01.com/2014/09/170342.html				
+	* get the build-essential	加载常用库
+* http://www.cnblogs.com/hlb430/archive/2012/05/11/2613045.html		
+	* get the other yum	获得第三方源
+* http://bbs.csdn.net/topics/390606349					
+	* about de share		关于share
 ## 2017/6/25
 
 Ready use git.I decide to use the github become my server repositories.Now begin!
