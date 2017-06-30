@@ -1,9 +1,7 @@
 # Centos study
 ## 2017/6/21
-
 begin use linux
 CentOS 7
-
 ## 2017/6/22
 	* yum install 		/*get the new base; get the epel yum; get the rem yum*/	
 	* install vm-tool 	/*change the CD-ROM*/
@@ -32,7 +30,6 @@ CentOS 7
 	* http://www.07net01.com/2014/09/170342.html						/*get the build-essential/*/
 	* http://www.cnblogs.com/hlb430/archive/2012/05/11/2613045.html	/* get the other yum */
 	* http://bbs.csdn.net/topics/390606349							/*about de share*/
-
 ## 2017/6/25
 
 Ready use git.I decide to use the github become my server repositories.Now begin!
