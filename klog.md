@@ -1,6 +1,6 @@
 # Centos study
 ## 2017/6/21
-begin use linux
+begin use linux开始使用linux
 CentOS 7
 ## 2017/6/22
 * about yum 		get the new base; get the epel yum; get the rem yum更改yum源，加载第三方epel，rem源，
