@@ -5,7 +5,6 @@ begin use linux
 CentOS 7
 
 ## 201/6/22
-
 	* yum install 		/*get the new base; get the epel yum; get the rem yum */	
 	* install vm-tool 	/*change the CD-ROM */
 	* about vi 	
