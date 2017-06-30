@@ -39,8 +39,8 @@ CentOS 7
 * http://bbs.csdn.net/topics/390606349					
 	* about de share		关于share
 ## 2017/6/25
-Ready use git.I decide to use the github become my server repositories.Now begin!准备使用git。我决定使用github作为我的远程库。
-This my PC informantion.这是我的环境配置
+### Ready use git.I decide to use the github become my server repositories.Now begin!准备使用git。我决定使用github作为我的远程库。
+#### This my PC informantion.这是我的环境配置
 ```
 #cat /proc/version
 ```
